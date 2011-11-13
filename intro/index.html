@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<head>
+  <title>Getting Started with deck.js</title>
+  <link rel="stylesheet" href="deckjs/core/deck.core.css">
+  <link rel="stylesheet" href="deckjs/themes/style/web-2.0.css">
+  <link rel="stylesheet" href="deckjs/themes/transition/horizontal-slide.css">
+  <link rel="stylesheet" href="introduction.css">
+  <link href="prettify/src/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="prettify/src/prettify.js"></script>
+  <script src="deckjs/modernizr.custom.js"></script>
+</head>
+
+<body class="deck-container" onload="prettyPrint()">
+  <section class="slide" id="title-slide">
+    <h1>Python Introduction</h1>
+  </section>
+  
+  <section class="slide" id="how-to-overview">
+    <h2>Quick Review</h2>
+    <ol>
+      <li>
+	<h3>Types</h3>
+	<p>What kind of things can we use?</p>
+      </li>
+      <li>
+	<h3>Variables</h3>
+	<p>Holds objects to use later!</p>
+      </li>
+      <li>
+	<h3>Functions</h3>
+	<p>&quot;machines&quot; that do fancy things for us.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="slide" id="Types">
+  <h2>Types</h2>
+  <p>Numbers, Strings, Lists, oh my!</p>
+  <ol>
+    <li>
+      <h3>Numbers</h3>
+      <pre class="prettyprint">
+	pi = 3.14159
+      </pre>
+    </li>
+    <li>
+      <h3>Strings</h3>
+      <p>Any word! 
+	<pre class="prettyprint">"Teddy" "Akiva" "Color"</pre></p>
+    </li>
+    <li>
+      <h3>Lists</h3>
+      <p>A bunch of things, like a bunch of numbers
+	<pre class="prettyprint">firstFour = [1, 2, 3, 4]</pre></p>
+    </li>
+  </ol>
+</section>
+
+<section class="slide" id="Variables">
+  <h2>Variables</h2>
+  <p>Hold values for us!</p>
+  <p>Why do we need them? It makes it easier to code!</p>
+  <p>Let's say we were making a website where, whenever someone visited, we tell them which person they are on our website.</p>
+  <p>We would have <code class="prettyprint">numTimesVisited = 0</code> at the start, and with each visitor, set <code class="prettyprint">numTimesVisited = numTimesVisited + 1</code> 
+  <pre class="prettyprint">
+    name = "Teddy"
+    age = 10
+    year = 2011
+    thisIsFun = True
+  </pre>
+  
+  <p>What if we want to print values? print keyword:</p>
+  <pre class="prettyprint">
+    print name
+  </pre>
+
+  <p>Let's look back at what we did to play with these variables!</p>
+</section>
+
+<section class="slide" id="YourTurn1">
+  <h2>Your Turn!</h2>
+  <p>set my age and your age to numbers!</p>
+  <pre class="prettyprint">
+    dogsAge = 7
+    print myAge
+    print yourAge
+  </pre>
+</section>
+
+<section class="slide" id="FunWithVariables">
+  <h2>Fun with Variables</h2>
+  <p>We can add two numbers with +</p>
+  <pre class="prettyprint">
+    teddysAge = 10;
+    myAge = 22;
+    ourAge = myAge + teddysAge
+  </pre>
+  <p>We can join two strings with +, too!</p>
+  <pre class="prettyprint">
+    firstName = "Teddy"
+    food = "Brocolli"
+    sentence = firstName + " likes " + food
+  </pre>
+  <p>Careful! We can't join numbers and strings with +!</p>
+  <pre class="prettyprint">
+    firstName = "Teddy"
+    age = 10
+    sentence = firstName + " is " + age # ERROR!
+  </pre>
+</section>
+
+<section class="slide" id="Functions">
+  <h2>Functions</h2>
+  <p>Do something over and over, but remember the action only by name</p>
+  <p>Example: sort a bunch of numbers. reverse a string. find out how close two points are</p>
+  <pre class="prettyprint">
+    numbers = [4, 3, 5]
+    sort(numbers) # the sort FUNCTION!
+  </pre>
+  
+  <pre class="prettyprint">
+    name = "Teddy"
+    letters = list(name) # the list FUNCTION!
+  </pre>
+  
+  <pre class="prettyprint">
+    ch = 'T'
+    value = ord(ch) # value is 84
+    ch = chr(value) # ch is back to being 'T'
+  </pre>
+</section>
+
+<section class="slide" id="YourTurn2">
+  <h2>Your Turn!</h2>
+  <p>Use <pre>len</pre> and <pre>sort</pre> to figure out the length of certain words
+  <pre class="prettyprint">
+    longsentence = "For score and seven years ago I was asleep but then a Yeti came!"
+    shortsentence = "hello"
+    len(shortsentence) # gives 5
+    sort(shortsentence) # gives what?
+  </pre>
+  <p>Do it for longsentence!</p>
+</section>
+
+<section class="slide" id="HomemadeFunctions">
+  <h2>Homemade Functions</h2>
+  <p>When we <b>make</b> functions, we need to add the <b>def</b> keyword.</p>
+  <p>We write:
+    <pre class="prettyprint">
+      def <i>functionName</i>(<b>parameters</b>):
+         #...do something...
+	 return <i>returnValue</i>
+    </pre>
+    
+  <pre class="prettyprint">
+    def sayMyName(name):
+        print "hello " + name
+  </pre>
+</section>
+
+<section class="slide" id="ConditionalStatements">
+  <h2>if, else</h2>
+  <p>Sometimes, we want to do something only if something else is true!</p>
+  <p>Example: we want to turn on the light until it is too bright, or we want to keep looking though a stack of numbers until we find the biggest one (which means, until we get to the end of the stack)</p>
+  <p>How do we check this in python?</p>
+  <pre class="prettyprint">
+    def makeBrighter(light): # light is a NUMBER
+      if light < 100:
+	light = light + 1
+      return light
+ </pre>
+  
+  <p>We can do some logical math to figure out if things are true or not</p>
+  <pre class="prettyprint">
+    name = "Akiva" # name is now Akiva
+    if name == "Teddy": # false!
+       print "What's up, Teddy"
+    else:
+       print "You're super cool."
+  </pre>
+</section>  
+  
+<section class="slide" id="ConditionalContinued">
+  <h2>for, while</h2>
+  <p>Sometimes, we want to do something many times</p>
+  <p><b>example</b> making random names: add letters until the length of the name is long enough</p>
+  <p>We can use <b>while</b> to check that a logical condition is still being kept!</p>
+  <pre class="prettyprint">
+    from random import randint
+    name = "" # no name yet
+    ordA = ord('A')
+    ordZ = ord('Z')
+    
+    while len(name) < 10:
+	name = name + randint(ordA, ordZ)
+    return name
+  </pre>
+</section>
+
+<section class="slide" id="YourTurn2">
+  <h2>Your Turn!</h2>
+  <p>Print, using <code>chr</code>, all the characters in ASCII mapping from 1 to 256!</p>
+</section>
+
+<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+<script>window.jQuery || document.write('<script src="deckjs/jquery-1.7.min.js"><\/script>')</script>
+<script src="deckjs/core/deck.core.js"></script>
+<script src="deckjs/extensions/navigation/deck.navigation.js"></script>
+<script src="introduction.js"></script>
+
+</body>
+</html>
